@@ -21,7 +21,7 @@ layout = [
         font=("Consolas", 23),
         background_color='grey23',
         text_color="white",
-        key="_Locarl_texto"
+        key="_Local_texto"
     )]
 ]
 
@@ -34,7 +34,20 @@ janela = sg.Window(
 )
 
 janela.read(timeout=1)
-janela["_Locarl_texto"].expand(expand_x=True, expand_y=True)
+janela["_Local_texto"].expand(expand_x=True, expand_y=True)
+
+
+# Abrir um arquivo que já existe
+def abrir_arquivo():
+    try:
+        filename: str = sg.popup_get_file("Open File", no_window=True)
+    except:
+        return
+    if filename not in (None, "") and not isinstance(filename, tuple):
+        with open(filename, "r") as f:
+            janela["_Local_texto"].update(value=f.read())
+    return filename
+
 
 # Loop da janela
 while True:
@@ -43,5 +56,8 @@ while True:
     if eventos in (None, "Sair"):
         janela.close()
         break
+
+    if eventos in (op_abrir):
+        filename = abrir_arquivo()
 
 # Fim
