@@ -1,2 +1,8 @@
 #
 Texto para testa o Editor.
+
+* Tabulação
+    teste
+
+* acentuação
+á à ç â ã
