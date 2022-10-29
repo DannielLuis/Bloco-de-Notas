@@ -7,11 +7,20 @@ from PySimpleGUI import PySimpleGUI as sg
 op_novo = "Novo"
 op_abrir = "Abrir"
 op_salva = "Salvar"
+op_salvar_como = "Salvar como"
+op_config = "Configurações"
 op_sair = "Sair"
 
 # Menu de opções
 menu = (
-    ["Arquivo", [op_novo, op_abrir, op_salva, op_sair]],
+    ["Arquivo", [
+        op_novo,
+        op_abrir,
+        op_salva,
+        op_salvar_como,
+        op_config,
+        op_sair
+        ]],
     ["Editar", ["Cortar", "Copiar", "Colar"]],
 )
 
@@ -41,6 +50,7 @@ janela["_Local_texto"].expand(expand_x=True, expand_y=True)
 def abrir_arquivo():
     try:
         filename: str = sg.popup_get_file("Open File", no_window=True)
+
     except:
         return
     if filename not in (None, "") and not isinstance(filename, tuple):
