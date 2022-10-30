@@ -2,6 +2,7 @@
 # Autor: Daniel Luis
 # Data de criação: 27/10/2022
 
+from tkinter import font
 from PySimpleGUI import PySimpleGUI as sg
 
 op_novo = "Novo"
@@ -24,10 +25,16 @@ menu = (
         op_sair
         ]],
     ["Editar", ["Cortar", "Copiar", "Colar"]],
+    ["Sobre"]
 )
 
 layout = [
-    [sg.MenuBar(menu)],
+    [sg.MenuBar(
+        menu,
+        font=("Consolas", 15),
+        text_color="white",
+        background_color='#333333',
+        )],
     [sg.Multiline(
         font=("Consolas", 23),
         background_color='grey23',
