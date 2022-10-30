@@ -2,7 +2,7 @@
 # Autor: Daniel Luis
 # Data de criação: 27/10/2022
 
-from tkinter import font
+
 from PySimpleGUI import PySimpleGUI as sg
 
 op_novo = "Novo"
