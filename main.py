@@ -18,7 +18,9 @@ menu = (
         op_abrir,
         op_salva,
         op_salvar_como,
+        '---',
         op_config,
+        '---',
         op_sair
         ]],
     ["Editar", ["Cortar", "Copiar", "Colar"]],
